@@ -30,8 +30,15 @@
 /datum/gear/general/candles
 	display_name = "candle pack"
 	path = /obj/item/storage/fancy/candle_box
-  
-  
+
+
 /datum/gear/general/ashtray
 	display_name = "ashtray"
 	path = /obj/item/storage/ashtray
+
+
+/datum/gear/general/charcoal_stick
+	display_name = "charcoal stick"
+	description = "A handcrafted charcoal stylus for inscrubing runes."
+	path = /obj/item/charcoal_stick
+	species_whitelist = "Werewolf"
