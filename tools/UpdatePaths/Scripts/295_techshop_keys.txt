@@ -1,0 +1,1 @@
+/obj/item/vamp/keys/techstore : /obj/item/vamp/keys/nightwolf {@OLD}

@@ -20,8 +20,10 @@ SUBSYSTEM_DEF(job)
 	SSmapping.HACK_LoadMapConfig()
 	if(!occupations.len)
 		SetupOccupations()
+	/*
 	if(CONFIG_GET(flag/load_jobs_from_txt))
 		LoadJobs()
+	*/
 	set_overflow_role(CONFIG_GET(string/overflow_job))
 	return ..()
 
@@ -47,6 +49,7 @@ SUBSYSTEM_DEF(job)
 	if(!all_jobs.len)
 		to_chat(world, "<span class='boldannounce'>Error setting up jobs, no job datums found</span>")
 		return FALSE
+		//idk
 
 	for(var/J in all_jobs)
 		var/datum/job/job = new J()

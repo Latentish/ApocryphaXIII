@@ -5,7 +5,11 @@
 	icon_state = "curse"
 	pixel_x = -16
 	pixel_y = -16
+	color = "#ba52ba"
 
+/obj/smite_crystal/Initialize(mapload)
+	. = ..()
+	add_overlay(image(icon='modular_zapoc/modules/apoc_decor/icons/man_crystal.dmi',icon_state="crystal", pixel_x = 16, pixel_y = 16))
 
 /// To be deployed after typos and blunders.
 /datum/smite/crystal

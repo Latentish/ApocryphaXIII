@@ -5,7 +5,7 @@
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
 	obj_damage = 30
-	environment_smash = ENVIRONMENT_SMASH_WALLS
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	unsuitable_heat_damage = 20

@@ -25,6 +25,11 @@
 	desc = "Definitely harder than the Blood-Drunk Miner."
 	database_id = BOSS_MEDAL_FROSTMINER
 
+/datum/award/achievement/boss/demonic_miner_kill/eternal_winter
+	name = "Eternal Winter Killer"
+	desc = "Definitely harder than the Blood-Drunk Miner."
+	database_id = BOSS_MEDAL_WINTER
+
 /datum/award/achievement/boss/bubblegum_kill
 	name = "Bubblegum Killer"
 	desc = "I guess he wasn't made of candy after all"
@@ -76,6 +81,11 @@
 	name = "Demonic-Frost Miner Crusher"
 	desc = "Definitely harder than the Blood-Drunk Miner."
 	database_id = BOSS_MEDAL_FROSTMINER_CRUSHER
+
+/datum/award/achievement/boss/demonic_miner_crusher/eternal_winter
+	name = "Eternal Winter Crusher"
+	desc = "Definitely harder than the Blood-Drunk Miner."
+	database_id = BOSS_MEDAL_WINTER_CRUSHER
 
 /datum/award/achievement/boss/bubblegum_crusher
 	name = "Bubblegum Crusher"

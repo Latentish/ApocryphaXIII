@@ -190,3 +190,39 @@ LOW_WALL_HELPER(vampwall/wood)
 	icon = 'icons/obj/smooth_structures/darkpack/mojave/brick/wall.dmi'
 	frill_icon = 'icons/obj/smooth_structures/darkpack/mojave/brick/frill.dmi'
 */
+
+/turf/closed/wall/vampwall/snow
+	name = "snowy wall"
+	desc = "A huge chunk of rusty metal used to separate rooms."
+	icon = 'icons/obj/smooth_structures/darkpack/wall/snow/wall.dmi'
+	frill_icon = 'icons/obj/smooth_structures/darkpack/wall/snow/frill.dmi'
+
+/turf/closed/wall/vampwall/snow/low
+	icon = 'icons/obj/smooth_structures/darkpack/wall/snow/low_wall.dmi'
+	opacity = FALSE
+	low = TRUE
+	blocks_air = FALSE
+	smoothing_groups = list(SMOOTH_GROUP_CITY_LOW_WALL)
+	canSmoothWith = list(SMOOTH_GROUP_CITY_LOW_WALL)
+
+/turf/closed/wall/vampwall/snow/low/window
+	window = /obj/structure/window/fulltile
+	WHEN_MAP(icon = 'code/modules/wod13/lowwalls.dmi')
+	WHEN_MAP(icon_state = "window_spawner")
+
+/turf/closed/wall/vampwall/snow/low/window/reinforced
+	window = /obj/structure/window/reinforced/fulltile
+
+/turf/closed/wall/vampwall/snow/low/window/reinforced/snow
+	window = /obj/structure/window/fulltile/permafrost
+
+/turf/closed/wall/vampwall/snowrock
+	name = "snow"
+	desc = "It's like a cave wall, but made of snow. Or maybe just covered in snow?"
+	icon = 'icons/obj/smooth_structures/darkpack/wall/snowrock/wall.dmi'
+	frill_icon = 'icons/obj/smooth_structures/darkpack/wall/snowrock/frill.dmi'
+
+/obj/structure/window/fulltile/permafrost
+	name = "permafrost"
+	desc = "It looks exactly like glass. It's cold to the touch."
+	max_integrity = INFINITY

@@ -30,6 +30,7 @@
 		new /datum/data/vending_product("egg carton", /obj/item/storage/fancy/egg_box),
 		new /datum/data/vending_product("flour bag", /obj/item/reagent_containers/food/condiment/flour, 3),
 		new /datum/data/vending_product("rice bag", /obj/item/reagent_containers/food/condiment/rice, 3),
+		new /datum/data/vending_product("sugar bag", /obj/item/reagent_containers/food/condiment/sugar, 3),
 		new /datum/data/vending_product("beer bottle", /obj/item/reagent_containers/food/drinks/beer/vampire),
 		new /datum/data/vending_product("blue stripe", /obj/item/reagent_containers/food/drinks/beer/vampire/blue_stripe),
 		new /datum/data/vending_product("candle pack", /obj/item/storage/fancy/candle_box),

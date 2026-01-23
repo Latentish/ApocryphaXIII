@@ -77,7 +77,10 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	new /obj/item/stack/ore/bluespace_crystal(loc, 3)
+	new /obj/item/stack/sheet/mineral/snow(loc, 1)
 	if(prob(5))
-		new /obj/item/raw_anomaly_core/bluespace(loc)
+		new /obj/item/stack/sheet/mineral/snow(loc, 10)
+	// new /obj/item/stack/ore/bluespace_crystal(loc, 3)
+	// if(prob(5))
+	// 	new /obj/item/raw_anomaly_core/bluespace(loc)
 	return ..()

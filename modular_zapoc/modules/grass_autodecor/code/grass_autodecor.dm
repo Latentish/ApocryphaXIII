@@ -34,3 +34,23 @@
 	. = ..()
 
 	spawn_autodecor(src)
+
+/turf/open/floor/plating/vampgrass/random/snow
+	MAP_SWITCH(icon_state = "snow1", icon_state = "snow_autodec")
+
+/turf/open/floor/plating/vampgrass/random/snow/Initialize(mapload)
+	. = ..()
+	icon_state = "snow[rand(1,14)]"
+
+/turf/open/floor/plating/vampgrass/random/snow/grass
+	MAP_SWITCH(icon_state = "snow1", icon_state = "snow_autodec_grass")
+	autodecor = list(/obj/structure/flora/ausbushes/fullgrass, /obj/structure/flora/ausbushes/shortgrass, /obj/structure/flora/ausbushes/sparsegrass, /obj/structure/flora/grass/green)
+
+/turf/open/floor/plating/vampgrass/random/snow/bushes // No rocks
+	MAP_SWITCH(icon_state = "snow1", icon_state = "snow_autodec_bushes")
+	autodecor = list(/obj/structure/flora/ausbushes)
+
+
+/turf/open/floor/plating/vampgrass/random/snow/rocks // Just rocks
+	MAP_SWITCH(icon_state = "snow1", icon_state = "snow_autodec_rocks")
+	autodecor = list(/obj/structure/small_vamprocks)

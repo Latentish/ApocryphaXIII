@@ -219,7 +219,6 @@
 		if(!tos_consent)
 			to_chat(usr, "<span class='warning'>You must consent to the terms of service before you can join!</span>")
 			return 0
-		SSbad_guys_party.candidates -= src
 		late_ready = FALSE
 		var/tready = text2num(href_list["ready"])
 		//Avoid updating ready if we're after PREGAME (they should use latejoin instead)
@@ -245,10 +244,8 @@
 		ready = PLAYER_NOT_READY
 		if(late_ready)
 			late_ready = FALSE
-			SSbad_guys_party.candidates -= src
 		else
 			late_ready = TRUE
-//			SSbad_guys_party.candidates += src
 
 	if(href_list["tos"])
 		privacy_consent()
@@ -262,7 +259,6 @@
 			to_chat(usr, "<span class='boldwarning'>You cannot respawn yet.</span>")
 			return
 
-		SSbad_guys_party.candidates -= src
 		late_ready = FALSE
 		if(!SSticker?.IsRoundInProgress())
 			to_chat(usr, "<span class='boldwarning'>The round is either not ready, or has already finished...</span>")

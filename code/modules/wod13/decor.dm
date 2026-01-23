@@ -143,6 +143,13 @@
 	icon_state = "civ"
 	number_of_lamps = 5
 
+/obj/structure/lamppost/sidewalk/winter
+	icon_state = "civ-snow"
+
+/obj/structure/lamppost/sidewalk/winter/Initialize()
+	. = ..()
+	icon_state = "[initial(icon_state)]-snow"
+
 /obj/structure/lamppost/sidewalk/chinese
 	icon_state = "chinese"
 
@@ -998,6 +1005,7 @@
 	desc = "Cute and tall flora."
 	icon = 'code/modules/wod13/trees.dmi'
 	icon_state = "tree1"
+	base_icon_state = "tree"
 	plane = GAME_PLANE
 	layer = SPACEVINE_LAYER
 	anchored = TRUE
@@ -1013,7 +1021,10 @@
 		if(istype(get_area(src), /area/vtm))
 			var/area/vtm/V = get_area(src)
 			if(V.upper)
-				icon_state = "[initial(icon_state)][rand(1, 11)]-snow"
+				if(prob(80))
+					icon_state = "[base_icon_state][rand(1, 11)]-snow"
+				else
+					icon_state = "dead[rand(1,3)]"
 
 /obj/structure/vamptree/proc/burnshit()
 	if(!burned)
@@ -1032,6 +1043,13 @@
 	pixel_x = -14
 	pixel_w = -24
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/structure/vamptree/pine/winter
+	icon_state = "pine1-snow"
+
+/obj/structure/vamptree/pine/winter/Initialize()
+	. = ..()
+	icon_state = "pine[rand(1, 4)]-snow"
 
 /obj/structure/vamptree/pine/Initialize()
 	. = ..()

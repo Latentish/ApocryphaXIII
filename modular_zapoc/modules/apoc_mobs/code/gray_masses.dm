@@ -3,9 +3,10 @@
 
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/death()
-	var/datum/effect_system/smoke_spread/gray_masses/s = new /datum/effect_system/smoke_spread/gray_masses
-	s.set_up(1, get_turf(src))
-	s.start()
+	if(deathpop)
+		var/datum/effect_system/smoke_spread/gray_masses/s = new /datum/effect_system/smoke_spread/gray_masses
+		s.set_up(1, get_turf(src))
+		s.start()
 	. = ..()
 
 

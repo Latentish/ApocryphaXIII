@@ -121,6 +121,11 @@
 	robust_searching = 1
 	var/dwarf_mob = FALSE
 	var/mob/living/carbon/human/stored_mob
+	var/endronscichance = 46
+	var/endronsecchance = 30
+	var/garouchance = 10
+	var/policechance = 10
+	var/civchance = 4
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
 	. = ..()
@@ -186,7 +191,7 @@
 	stat_attack = CONSCIOUS // APOC EDIT ADD - Don't execute
 	robust_searching = 1
 	var/can_infest_dead = FALSE
-
+	var/deathpop = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
 	. = ..()
@@ -290,8 +295,15 @@
 	. = ..()
 	H.dna.add_mutation(DWARFISM)
 
-/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize() // APOC EDIT START
-	var/type = pickweight(list("EndronSci" = 46, "EndronSec" = 30, "Garou" = 10, "Police" = 10, pick(list("Ciz1", "Ciz2", "Ciz3", "Ciz4")) = 4))
+/obj/effect/mob_spawn/human/corpse/damaged/legioninfested
+	var/endronscichance = 46
+	var/endronsecchance = 30
+	var/garouchance = 10
+	var/policechance = 10
+	var/civchance = 4
+
+/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
+	var/type = pickweight(list("EndronSci" = endronscichance, "EndronSec" = endronsecchance, "Garou" = garouchance, "Police" = policechance, pick(list("Ciz1", "Ciz2", "Ciz3", "Ciz4")) = civchance))
 	switch(type)
 		if("EndronSci")
 			uniform = /obj/item/clothing/under/pentex/pentex_turtleneck
@@ -443,6 +455,11 @@
 	crusher_loot = /obj/item/crusher_trophy/legion_skull
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow
+	endronscichance = 1
+	endronsecchance = 1
+	garouchance = 1
+	policechance = 25
+	civchance = 72
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/make_legion(mob/living/carbon/human/H)
 	return new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow(H.loc)
@@ -456,3 +473,12 @@
 	icon_living = "snowlegion_head"
 	icon_aggro = "snowlegion_head"
 	icon_dead = "snowlegion_head"
+	loot = list(/obj/item/stack/sheet/mineral/snow)
+	deathpop = FALSE
+
+/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/permafrost
+	endronscichance = 1
+	endronsecchance = 1
+	garouchance = 1
+	policechance = 25
+	civchance = 72

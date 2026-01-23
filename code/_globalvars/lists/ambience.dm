@@ -121,5 +121,13 @@ GLOBAL_LIST_INIT(music_assoc,list(
 	MUSIC_BAR = list('sound/musictracks/naive.ogg'),
 	MUSIC_HOLLYWOOD = list('sound/musictracks/hollywood.ogg', 'sound/musictracks/open_season.ogg', 'sound/musictracks/is_it_all_worth_it.ogg'),
 	MUSIC_SANTAMONICA = list('sound/musictracks/santamonica.ogg'),
-	MUSIC_SAFE = list('sound/musictracks/volition.ogg', 'sound/musictracks/safe_room.ogg')
+	MUSIC_SAFE = list('sound/musictracks/volition.ogg', 'sound/musictracks/safe_room.ogg'),
+	MUSIC_EWINTER = list('modular_zapoc/modules/apoc_areas/sound/eternal_winter/abyssal_shelf.ogg',
+		'modular_zapoc/modules/apoc_areas/sound/eternal_winter/fable2_menu_theme.ogg', 'modular_zapoc/modules/apoc_areas/sound/eternal_winter/first_snow.ogg',
+		'modular_zapoc/modules/apoc_areas/sound/eternal_winter/kingdom_of_snow.ogg', 'modular_zapoc/modules/apoc_areas/sound/eternal_winter/snowfall.ogg',
+		'modular_zapoc/modules/apoc_areas/sound/eternal_winter/white_noiz.ogg'),
+	MUSIC_EWINTERCAVE = list('modular_zapoc/modules/apoc_areas/sound/eternal_winter/fable2_menu_theme.ogg',
+		'modular_zapoc/modules/apoc_areas/sound/eternal_winter/first_snow.ogg', 'modular_zapoc/modules/apoc_areas/sound/eternal_winter/ice_cavern.ogg',
+		'modular_zapoc/modules/apoc_areas/sound/eternal_winter/kingdom_of_snow.ogg', 'modular_zapoc/modules/apoc_areas/sound/eternal_winter/premonition.ogg',
+		'modular_zapoc/modules/apoc_areas/sound/eternal_winter/secret_room.ogg')
 	))

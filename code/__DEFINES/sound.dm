@@ -66,6 +66,8 @@
 #define MUSIC_HOLLYWOOD "hollywood"
 #define MUSIC_SANTAMONICA "santamonica"
 #define MUSIC_SAFE "saftey"
+#define MUSIC_EWINTER "eternal_winter"
+#define MUSIC_EWINTERCAVE "eternal_winter_cave"
 
 //default byond sound environments
 #define SOUND_ENVIRONMENT_NONE -1

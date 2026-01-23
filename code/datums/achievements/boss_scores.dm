@@ -18,6 +18,11 @@
 	desc = "You've killed HOW many?"
 	database_id = FROST_MINER_SCORE
 
+/datum/award/score/demonic_miner_score/eternal_winter
+	name = "Eternal Winters Killed"
+	desc = "You've killed HOW many?"
+	database_id = WINTER_SCORE
+
 /datum/award/score/bubblegum_score
 	name = "Bubblegums Killed"
 	desc = "You've killed HOW many?"

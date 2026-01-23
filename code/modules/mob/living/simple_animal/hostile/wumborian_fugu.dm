@@ -93,7 +93,7 @@
 	F.retreat_distance = null
 	F.minimum_distance = 1
 	F.move_to_delay = 6
-	F.environment_smash = ENVIRONMENT_SMASH_WALLS
+	F.environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	F.mob_size = MOB_SIZE_LARGE
 	F.speed = 1
 	addtimer(CALLBACK(F, TYPE_PROC_REF(/mob/living/simple_animal/hostile/asteroid/fugu, Deflate)), 100)
@@ -143,6 +143,6 @@
 		A.melee_damage_lower = max((A.melee_damage_lower * 2), 10)
 		A.melee_damage_upper = max((A.melee_damage_upper * 2), 10)
 		A.transform *= 2
-		A.environment_smash |= ENVIRONMENT_SMASH_STRUCTURES | ENVIRONMENT_SMASH_RWALLS
+		A.environment_smash |= ENVIRONMENT_SMASH_STRUCTURES | ENVIRONMENT_SMASH_STRUCTURES
 		to_chat(user, "<span class='info'>You increase the size of [A], giving it a surge of strength!</span>")
 		qdel(src)

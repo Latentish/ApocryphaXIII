@@ -44,7 +44,6 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/encipher_word,
 	/client/proc/uncipher_word,
 	*/
-	/client/proc/set_late_party,		/*sets the party for late joiners*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
 	/client/proc/ghost_pool_protection,	/*opens a menu for toggling ghost roles*/
 	/datum/admins/proc/toggleooc,		/*toggles ooc on/off for everyone*/
@@ -989,22 +988,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set category = "Admin.Game"
 	if(holder)
 		src.holder.output_ai_laws()
-
-/client/proc/set_late_party()
-	set name = "Set Late Party"
-	set category = "Admin.Game"
-
-	var/setting = input(usr, "Choose the bad guys party setting:", "Set Late Party") in list("caitiff", "sabbat", "hunter", "random")
-	if(setting == "random")
-		SSbad_guys_party.setting = null
-		SSbad_guys_party.get_badguys()
-	else
-		SSbad_guys_party.set_badguys(setting)
-		SSbad_guys_party.get_badguys()
-
-	log_admin("[key_name(usr)] set the bad guys party setting to [setting]")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] set the bad guys party setting to [setting]</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Late Party")
 
 /client/proc/deadmin()
 	set name = "Deadmin"

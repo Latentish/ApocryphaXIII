@@ -551,6 +551,7 @@
 	tastes = list("cookie" = 1)
 	foodtypes = GRAIN | SUGAR
 	w_class = WEIGHT_CLASS_SMALL
+	custom_price = PAYCHECK_ASSISTANT * 0.2 // APOC EDIT ADD
 
 /obj/item/food/cookie/Initialize()
 	. = ..()

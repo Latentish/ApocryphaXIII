@@ -105,6 +105,8 @@
 	var/list/jobs_changes = GetMapChanges()
 	if(!jobs_changes)
 		return
+	if(!length(jobs_changes))
+		return
 	if(isnum(jobs_changes["additional_access"]))
 		access += jobs_changes["additional_access"]
 	if(isnum(jobs_changes["additional_minimal_access"]))

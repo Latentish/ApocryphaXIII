@@ -31,6 +31,7 @@ Difficulty: Extremely Hard
 	crusher_loot = list(/obj/effect/decal/remains/plasma, /obj/item/crusher_trophy/ice_block_talisman)
 	loot = list(/obj/effect/decal/remains/plasma)
 	wander = FALSE
+	stat_attack = SOFT_CRIT // APOC EDIT ADD - Don't execute
 	del_on_death = TRUE
 	blood_volume = BLOOD_VOLUME_NORMAL
 	achievement_type = /datum/award/achievement/boss/demonic_miner_kill
@@ -249,7 +250,7 @@ Difficulty: Extremely Hard
 	spin(100, 10)
 	SLEEP_CHECK_DEATH(60)
 	playsound(src, 'sound/effects/explosion3.ogg', 100, TRUE)
-	icon_state = "demonic_miner_phase2"
+	icon_state = "[icon_state]_phase2"
 	animate(src, pixel_y = pixel_y - 96, time = 8, flags = ANIMATION_END_NOW)
 	spin(8, 2)
 	SLEEP_CHECK_DEATH(8)
@@ -263,7 +264,7 @@ Difficulty: Extremely Hard
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/death(gibbed, list/force_grant)
 	if(health > 0)
 		return
-	var/turf/T = get_turf(src)
+/*	var/turf/T = get_turf(src) // DARKPACK EDIT REMOVE - None of these really fit...
 	var/loot = rand(1, 3)
 	switch(loot)
 		if(1)
@@ -271,7 +272,7 @@ Difficulty: Extremely Hard
 		if(2)
 			new /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail(T)
 		if(3)
-			new /obj/item/pickaxe/drill/jackhammer/demonic(T)
+			new /obj/item/pickaxe/drill/jackhammer/demonic(T)*/
 	return ..()
 
 /obj/item/resurrection_crystal

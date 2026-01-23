@@ -40,7 +40,7 @@
 		/datum/action/gift/digital_feelings = 2,
 		/datum/action/gift/elemental_improvement = 3
 	)
-	tribe_keys = /obj/item/vamp/keys/techstore
+	tribe_keys = /obj/item/vamp/keys/nightwolf // APOC EDIT CHANGE
 
 /datum/garou_tribe/bonegnawers
 	name = "Bone Gnawers"
@@ -97,7 +97,7 @@
 		/datum/action/gift/freezing_wind = 2,
 		/datum/action/gift/bloody_feast = 3
 	)
-	tribe_keys = /obj/item/vamp/keys/techstore
+	tribe_keys = /obj/item/vamp/keys/nightwolf // APOC EDIT CHANGE
 
 /datum/garou_tribe/redtalons
 	name = "Red Talons"
