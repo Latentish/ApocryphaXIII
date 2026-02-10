@@ -16,10 +16,10 @@ GLOBAL_LIST_EMPTY(unallocated_agility_shortcuts)
 	// If not 0, must have at least this much athletics to pass.
 	var/minimum_athletics = 0
 	// Lists for determining who is allowed to use the shortcut
-	var/allowed_species
-	var/allowed_bloodlines
-	var/allowed_tribes
-	var/allowed_jobs
+	var/list/allowed_species
+	var/list/allowed_bloodlines
+	var/list/allowed_tribes
+	var/list/allowed_jobs
 	var/anyone_can_enter
 
 /obj/agility_shortcut/Initialize() // Evil copypaste of transferpoint code
@@ -81,7 +81,7 @@ GLOBAL_LIST_EMPTY(unallocated_agility_shortcuts)
 		if(mover.dna.species in allowed_species)
 			return TRUE
 
-		if(mover.clan.name in allowed_bloodlines)
+		if(iskindred(mover) && (mover.clan.name in allowed_bloodlines))
 			return TRUE
 
 		if(mover.auspice.tribe.name in allowed_tribes)
