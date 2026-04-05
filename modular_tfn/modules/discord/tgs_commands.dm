@@ -3,8 +3,8 @@
 	help_text = "Gets the playercount, gamemode, and address of the server"
 
 /datum/tgs_chat_command/tgscheck/Run(datum/tgs_chat_user/sender, params)
-	var/server = "192.223.26.57:42457"
-	return new /datum/tgs_message_content("[GLOB.round_id ? "Round #[GLOB.round_id]: " : ""][GLOB.clients.len] players on [SSmapping.config.map_name]; Round [SSticker.HasRoundStarted() ? (SSticker.IsRoundInProgress() ? "Active" : "Finishing") : "Starting"] -- [server ? server : "[world.internet_address]:[world.port]"]")
+	var/server = "byond://37.27.129.146:1337" // APOC EDIT CHANGE - grrr tfn
+	return new /datum/tgs_message_content("[GLOB.round_id ? "Round #[GLOB.round_id] ([ROUND_TIME()]): " : "([ROUND_TIME()]): "]Players: [length(GLOB.clients)] (Active: [get_active_player_count(0,1,0)]), Map: [SSmapping.config.map_name], Round [SSticker.HasRoundStarted() ? (SSticker.IsRoundInProgress() ? "Active" : "Finishing") : "Starting/Delayed"] -- Join now! [server]") // APOC EDIT CHANGE - grrr tfn
 
 /datum/tgs_chat_command/gameversion
 	name = "gameversion"
@@ -49,3 +49,16 @@
 	// If we got here, they arent in the list. Chuck 'em in!
 	SSdiscord.notify_members += sender.mention
 	return new /datum/tgs_message_content("You will now be notified when the server restarts")
+
+// APOC EDIT START - obviously // fangfuckies :3
+/datum/tgs_chat_command/fangfuckies // Friend
+	name = "fangfuckies"
+	help_text = "Posts a random biting gif (0.1% chance for an ultra-rare bonus gif.)"
+
+/datum/tgs_chat_command/fangfuckies/Run(datum/tgs_chat_user/sender, params)
+	var/random_image = splittext(CONFIG_GET(string/bite_img_list), ", ") // comma + space delimiter
+	if(prob(0.1))
+		return new /datum/tgs_message_content("https://images2.imgbox.com/de/57/LouUHBzY_o.gif") // sneefer
+
+	return new /datum/tgs_message_content("[pick(random_image)]")
+// APOC EDIT END
